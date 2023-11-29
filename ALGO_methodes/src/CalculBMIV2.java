@@ -41,6 +41,8 @@ public class CalculBMIV2 {
         if(bmi<=30)
             return "en embonpoint";
         // bmi > 30
+        if(bmi >40)
+            return "en"
         return "obese";
     }
 
