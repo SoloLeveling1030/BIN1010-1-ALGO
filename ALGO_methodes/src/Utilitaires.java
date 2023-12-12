@@ -118,11 +118,11 @@ public class Utilitaires {
      */
 
     public static String max3(int entier1,int entier2,int entier3 ) {
-        if (entier1 > entier2 && entier1 > entier3)
+        if (entier1 >= entier2 && entier1 >= entier3){
             return "Le plus grand entier est " + entier1;
-        if (entier2 > entier3)
+    }else if (entier2 > entier1 && entier2 >= entier3) {
             return "Le plus grand entier est " + entier2;
-
+        } else
         return "Le plus grand entier est " + entier3;
     }
     public static String donnerCommentaire(double cote){
