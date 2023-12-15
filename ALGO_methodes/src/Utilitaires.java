@@ -78,20 +78,6 @@ public class Utilitaires {
         }
         return entier;
     }
-    /**
-    *lit une cote
-    *@return une cote
-     */
-    public static int lireNombresDeCote(){
-        int nombreDeCote = scanner.nextInt();
-        while (nombreDeCote == 0) {
-            System.out.println("Aumoins une cote");
-            System.out.print("Recommencez : ");
-            nombreDeCote = scanner.nextInt();
-        }
-        return nombreDeCote;
-
-    }
 
     /**
      * lis une cote compris 2 valeurs passées en parametres
@@ -100,14 +86,34 @@ public class Utilitaires {
      * @return une cote entre les 2 bornes 
      */
     public static double lireUneCote(double min, double max){
-        double cote = scanner.nextDouble();
-        while(cote <min || cote >max){
-            System.out.println("Cote sur 20");
-            System.out.print("Recommencez : ");
+        double cote = 0;
+        double moyenne =0;
+        int nombreCote =10;
+        System.out.println("Cote sur 20");
+        for (int i = 1; i <= nombreCote; i++) {
+            System.out.println("Entrez la cote numero"+i);
             cote = scanner.nextDouble();
-
+            while(cote <min || cote >max){
+                System.out.print("Recommencez : ");
+                cote = scanner.nextDouble();
+            }
+            moyenne+=cote;
         }
-        return cote;
+        moyenne /=nombreCote;
+        return moyenne;
+    }
+    public static double calculerMoyenneEtudiant(){
+        double cote = 0;
+        double moyenne = 0;
+        int nombreCote = 10;
+        System.out.println("Cote sur 20");
+        for (int i = 0; i < nombreCote; i++) {
+            System.out.println("Entrez la cote " + i +" : ");
+            cote = Utilitaires.lireUneCote(0,20);
+            moyenne += cote;
+        }
+        moyenne /=nombreCote;
+        return moyenne;
     }
 
     /**Renvoi sous forme de chaine de carctere, le max des entiers
