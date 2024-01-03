@@ -1,2 +1,1 @@
-# BIN1010-1-ALGO  Ex E
-
+# BIN1010-1-ALGO  Ex D
